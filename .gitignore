@@ -1,0 +1,69 @@
+# Fichiers sensibles - NE JAMAIS COMMITER
+config/token.json
+config/client_secret.json
+config/*.json
+
+# Exclure tous les JSON sauf ceux explicitement autorisés
+*.json
+!package.json
+!package-lock.json
+
+# Variables d'environnement
+.env
+.env.local
+.env.*.local
+
+# Fichiers générés
+outputs/
+*.txt
+!README.txt
+!requirements.txt
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+*.pyc
+.pytest_cache/
+
+# Environnements virtuels
+venv/
+ENV/
+env/
+.venv
+.venv/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Logs
+*.log
+logs/
+
+# Fichiers temporaires
+*.tmp
+*.bak
+*.swp
