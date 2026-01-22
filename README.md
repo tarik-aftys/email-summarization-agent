@@ -1,26 +1,25 @@
-# 📧 Email Summarization Agent
+#  Email Summarization Agent
 
 Un agent d'IA intelligent qui récupère vos emails depuis Gmail et les résume automatiquement en utilisant des modèles de langage gratuits.
 
-## ✨ Fonctionnalités
+##  Fonctionnalités
 
-- 🔐 **Authentification Gmail** via OAuth2
-- 📧 **Récupération automatique** des derniers emails
-- 🤖 **Résumé intelligent** avec extraction de :
+-  **Authentification Gmail** via OAuth2
+-  **Récupération automatique** des derniers emails
+-  **Résumé intelligent** avec extraction de :
   - Points clés
   - Actions à faire
   - Échéances
   - Niveau d'urgence (Low, Medium, High)
-- 💾 **Sauvegarde** des résultats en JSON et texte
-- 🆓 **Gratuit** - Utilise Hugging Face (pas de paiement requis)
+-  **Sauvegarde** des résultats en JSON et texte
+-  **Gratuit** - Utilise Hugging Face (pas de paiement requis)
 
-## 📋 Prérequis
+##  Prérequis
 
 - Python 3.7+
-- Un compte Gmail
-- Un compte Hugging Face (optionnel, pour plus de limites)
+- Un compte Hugging Face
 
-## 🚀 Installation
+##  Installation
 
 1. **Clonez le repository** :
 ```bash
@@ -54,7 +53,7 @@ pip install -r requirements.txt
    export HF_API_KEY="votre_token_ici"
    ```
 
-## 💻 Utilisation
+##  Utilisation
 
 Exécutez simplement :
 ```bash
@@ -67,7 +66,7 @@ Le script va :
 3. Les résumer avec l'IA
 4. Sauvegarder les résultats dans `outputs/summary.json` et `outputs/summary.txt`
 
-## 📁 Structure du projet
+##  Structure du projet
 
 ```
 emailSummarizationAgent/
@@ -91,27 +90,18 @@ emailSummarizationAgent/
     └── summary.txt
 ```
 
-## ⚙️ Configuration
+##  Configuration
 
 ### Modèle IA utilisé
 
 Par défaut, le projet utilise `Qwen/Qwen2.5-3B-Instruct` de Hugging Face (gratuit).
 
-Pour changer le modèle :
-```powershell
-$env:HF_MODEL="nom-du-modele"
-```
 
-Autres modèles disponibles :
-- `mistralai/Mistral-7B-Instruct-v0.2`
-- `google/flan-t5-large`
-- `facebook/bart-large-cnn`
-
-### Nombre d'emails à traiter
+### Nombre d'emails à traiter est par défaut 10
 
 Modifiez `MAX_RESULTS` dans `emailExtract.py` pour changer le nombre d'emails récupérés (défaut: 10).
 
-## 📄 Fichiers générés
+##  Fichiers générés
 
 Tous les fichiers générés sont sauvegardés dans le dossier `outputs/` :
 
@@ -119,36 +109,3 @@ Tous les fichiers générés sont sauvegardés dans le dossier `outputs/` :
 - `outputs/summary.json` : Résumés en format JSON
 - `outputs/summary.txt` : Résumés formatés en texte
 
-## 🔒 Sécurité
-
-⚠️ **IMPORTANT** : Ne commitez JAMAIS :
-- `config/token.json`
-- `config/client_secret.json`
-- Tout fichier contenant des clés API
-- Le dossier `outputs/` (résultats générés)
-
-Ces fichiers sont automatiquement exclus via `.gitignore`.
-
-**Note** : Placez votre fichier `client_secret.json` dans le dossier `config/` après l'avoir téléchargé depuis Google Cloud Console.
-
-## 🐛 Dépannage
-
-### Erreur 403 : access_denied
-- Ajoutez votre email comme utilisateur de test dans Google Cloud Console
-- Vérifiez que l'application est en mode "Test"
-
-### Erreur 410 : Modèle non disponible
-- Le modèle demandé n'est plus accessible
-- Changez le modèle avec `$env:HF_MODEL="autre-modele"`
-
-### Erreur 503 : Modèle en chargement
-- Normal à la première requête
-- Attendez 20-30 secondes et réessayez
-
-## 📝 Licence
-
-MIT License
-
-## 👤 Auteur
-
-Votre nom
