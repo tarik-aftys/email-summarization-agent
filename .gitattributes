@@ -1,11 +1,5 @@
 # Standardiser les fins de ligne
 * text=auto eol=lf
 
-# Fichiers binaires
-*.png binary
-*.jpg binary
-*.jpeg binary
-*.gif binary
-*.ico binary
-*.pdf binary
+
 
